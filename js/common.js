@@ -41,7 +41,13 @@ if ($(window).width() <= '575') {
   })
 }
 
+$("#city").selectmenu();
+$(".products_count_list").selectmenu();
 
+$(".pin").click(function(){
+  $(".pin").removeClass("-active");
+  $(this).addClass("-active");
+});
 // $('.ipartners_slides').flickity({
 //   pageDots: false,
 //   cellAlign: 'left',
@@ -101,6 +107,7 @@ if ($(window).width() <= '575') {
    
 
   });
+  
 
 
 initialize_owl($('#owl-news-all'));
@@ -129,7 +136,7 @@ function initialize_owl(el) {
     fluidSpeed: 1000,
     mouseDrag: true,
     touchDrag: true,
-    
+    autoHeight:true,
     responsive: {
       992: {
         items: 4,
@@ -192,3 +199,6 @@ $(function() {
 
 
 
+$(function() {
+  $(".news_wrap").mixItUp();
+})
