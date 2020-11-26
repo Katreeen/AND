@@ -43,6 +43,21 @@ if ($(window).width() <= '575') {
 
 $("#city").selectmenu();
 $(".products_count_list").selectmenu();
+// $("#filter_city").selectmenu();
+
+$(function(){
+  var $container = $('.vacancies_list');
+  $container.mixItUp();
+  $("#filter_city").selectmenu({
+    change: function() {
+      $container.mixItUp('filter', this.value);
+    }
+  });
+  
+
+});
+
+
 
 $(".pin").click(function(){
   $(".pin").removeClass("-active");
