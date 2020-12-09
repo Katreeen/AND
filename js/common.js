@@ -122,6 +122,35 @@ $(".pin").click(function(){
    
 
   });
+  $('.category_slider').owlCarousel({
+    loop:true,
+    nav:true,
+    dots:false,
+    slideBy:1,
+    items:4,
+    smartSpeed:1000,
+    fluidSpeed:1000,
+    mouseDrag:true,
+    touchDrag:true,
+    margin: 30, 
+    responsive: {
+      992: {
+        items: 4,
+        navContainer: '.category_slider_arrows',
+      },
+      768: {
+        items: 3,
+        navContainer: '.category_slider_arrows',
+      },
+      575: {
+        items: 2,
+        navContainer: '.category_slider_arrows',
+      },
+      0: {
+        items: 1,
+      }
+    }
+  });
   
 
 
@@ -206,9 +235,76 @@ $(function() {
 
 
 
+$('.detail_photo').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.addon_photo',
+  dots: false
+});
+$('.addon_photo').slick({
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  asNavFor: '.detail_photo',
+  focusOnSelect: true,
+  dots: false,
+  vertical: true,
+  verticalSwiping: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+        vertical: true,
+        verticalSwiping: true
+      }
+    },
+    {
+      breakpoint: 575,
+      settings: {
+        slidesToShow: 4,
+        vertical: false,
+        verticalSwiping: false
+      }  
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 3,
+        vertical: false,
+        verticalSwiping: false
+      }
+    },
+    {
+      breakpoint: 400,
+      settings: {
+        slidesToShow: 2,
+        vertical: false,
+        verticalSwiping: false
+      }
+    }
+  ]
+});
 
-
-
+$('.site_item').click(function(){
+  console.log("click");
+  if($('.popup').hasClass('active')){
+    $('.popup').removeClass('active');
+  }else{
+    $('.popup').addClass('active');
+  }
+  return false;
+});
+$('.close_popup').click(function(){
+  console.log("click");
+  if($('.popup').hasClass('active')){
+    $('.popup').removeClass('active');
+  }else{
+    $('.popup').addClass('active');
+  }
+  return false;
+});
 
 });//$(document).ready
 
@@ -216,4 +312,6 @@ $(function() {
 
 $(function() {
   $(".news_wrap").mixItUp();
-})
+});
+
+
