@@ -340,8 +340,8 @@ p {margin:0;}
 	.ibest_slider{margin-top: 44px;}
 		.slider_item{padding-bottom: 80px;}
 			.ibest_slider_item_row{}
-			.owl-stage-outer { overflow: visible;}
-				
+			
+			.ibest_slider .owl-item{padding: 0 15px 30px;}
 				
 
 				.ibest_item_main{filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.1));}
